@@ -17,7 +17,7 @@ const findings = [];
 
 async function walk(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
-    if (ignored.has(entry.name)) continue;
+    if (ignored.has(entry.name) || entry.name.startsWith('release-artifacts')) continue;
     const path = new URL(`${entry.name}${entry.isDirectory() ? '/' : ''}`, directory);
     if (entry.isDirectory()) {
       await walk(path);

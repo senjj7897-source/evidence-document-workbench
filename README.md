@@ -2,7 +2,7 @@
 
 面向复杂任务与材料管理的智能文档工作台，把证据、判断边界和修改决策组合成可复核的工作链。
 
-Evidence Workbench 适用于制度、审计、风控、法务和复杂管理材料。它保存文件版本和原文位置，将确定性核验、语义审查、修改建议与最终采用衔接起来，便于复核每项结论是如何形成的。
+作者：jinlu lv
 
 [产品介绍页](https://senjj7897-source.github.io/evidence-document-workbench/) · [最新 Release](https://github.com/senjj7897-source/evidence-document-workbench/releases/latest)
 
