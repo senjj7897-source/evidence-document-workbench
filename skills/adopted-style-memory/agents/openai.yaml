@@ -1,0 +1,4 @@
+interface:
+  display_name: "已采纳文风记忆"
+  short_description: "只从明确采纳文本中积累可追溯表达偏好"
+  default_prompt: "Use $adopted-style-memory to extract reusable style preferences from these adopted samples without learning case facts."

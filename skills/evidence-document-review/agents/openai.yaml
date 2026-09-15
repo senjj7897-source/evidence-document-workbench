@@ -1,0 +1,4 @@
+interface:
+  display_name: "证据链文档审查"
+  short_description: "区分事实、缺口、冲突和风险推断的可追溯审查"
+  default_prompt: "Use $evidence-document-review to audit these materials and return a deduplicated, source-linked issue list."

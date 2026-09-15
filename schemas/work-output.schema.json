@@ -1,0 +1,20 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["title", "paragraphs", "missing", "boundary"],
+  "properties": {
+    "title": {"type": "string"},
+    "paragraphs": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false, "required": ["text", "kind", "evidence"],
+      "properties": {
+        "text": {"type": "string"},
+        "kind": {"type": "string", "enum": ["source_statement", "inference", "proposal"]},
+        "evidence": {"type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["sourceId", "unitId", "quote"],
+          "properties": {"sourceId": {"type": "string"}, "unitId": {"type": "string"}, "quote": {"type": "string"}}
+        }}
+      }
+    }},
+    "missing": {"type": "array", "items": {"type": "string"}},
+    "boundary": {"type": "string"}
+  }
+}

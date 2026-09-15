@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reviewMap"],
+  "properties": {
+    "reviewMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["documentPurpose", "methodChains", "capabilityPromises", "unresolvedDependencies", "evidenceIndex"],
+      "properties": {
+        "documentPurpose": {"type": "string"},
+        "methodChains": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "target", "inputs", "process", "outputs", "managementUse"],
+            "properties": {
+              "name": {"type": "string"},
+              "target": {"type": "string"},
+              "inputs": {"type": "string"},
+              "process": {"type": "string"},
+              "outputs": {"type": "string"},
+              "managementUse": {"type": "string"}
+            }
+          }
+        },
+        "capabilityPromises": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["promise", "locationLabel", "closureQuestions"],
+            "properties": {
+              "promise": {"type": "string"},
+              "locationLabel": {"type": "string"},
+              "closureQuestions": {"type": "array", "maxItems": 12, "items": {"type": "string"}}
+            }
+          }
+        },
+        "unresolvedDependencies": {"type": "array", "maxItems": 20, "items": {"type": "string"}},
+        "evidenceIndex": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fileId", "fileName", "locationLabel", "quote", "relevance"],
+            "properties": {
+              "fileId": {"type": "string"},
+              "fileName": {"type": "string"},
+              "locationLabel": {"type": "string"},
+              "quote": {"type": "string"},
+              "relevance": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

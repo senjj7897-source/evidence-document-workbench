@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["issues", "coverage"],
+  "properties": {
+    "issues": {
+      "type": "array",
+      "maxItems": 80,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["module", "findingType", "category", "severity", "title", "summary", "basis", "impact", "confidence", "inferenceLevel", "originalText", "suggestedText", "rewriteReason", "evidence"],
+        "properties": {
+          "module": {"type": "string", "enum": ["conflict", "logic", "data", "proofread", "sentence", "writing", "version", "open", "deep"]},
+          "findingType": {"type": "string", "enum": ["issue", "improvement"]},
+          "category": {"type": "string"},
+          "severity": {"type": "string", "enum": ["high", "medium", "low"]},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "basis": {"type": "string"},
+          "impact": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "inferenceLevel": {"type": "string", "enum": ["fact", "confirmable_omission", "risk_inference"]},
+          "originalText": {"type": ["string", "null"]},
+          "suggestedText": {"type": ["string", "null"]},
+          "rewriteReason": {"type": ["string", "null"]},
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["fileId", "fileName", "locationLabel", "quote"],
+              "properties": {
+                "fileId": {"type": "string"},
+                "fileName": {"type": "string"},
+                "locationLabel": {"type": "string"},
+                "quote": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 60,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["module", "dimension", "status", "notes", "evidenceLabels", "counterEvidenceChecked"],
+        "properties": {
+          "module": {"type": "string", "enum": ["conflict", "logic", "data", "proofread", "sentence", "writing", "version", "open", "deep"]},
+          "dimension": {"type": "string"},
+          "status": {"type": "string", "enum": ["finding", "no_finding", "blocked"]},
+          "notes": {"type": "string"},
+          "evidenceLabels": {
+            "type": "array",
+            "maxItems": 12,
+            "items": {"type": "string"}
+          },
+          "counterEvidenceChecked": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

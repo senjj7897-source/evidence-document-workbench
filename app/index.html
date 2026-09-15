@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>文档审查工作台</title>
+    <link rel="stylesheet" href="/vendor/phosphor/style.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app" aria-live="polite"></div>
+    <input id="file-input" data-testid="file-input" type="file" multiple accept=".doc,.docx,.docm,.xls,.xlsx,.xlsm,.pdf,.ppt,.pptx,.csv,.rtf" hidden />
+    <div id="toast" class="toast" role="status"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

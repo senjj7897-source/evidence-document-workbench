@@ -1,0 +1,21 @@
+{
+  "name": "evidence-document-workbench",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Local-first, evidence-gated document intelligence for regulated and high-stakes work.",
+  "repository": "https://github.com/senjj7897-source/evidence-document-workbench",
+  "homepage": "https://senjj7897-source.github.io/evidence-document-workbench/",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "prototype": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:xlsx": "node tests/xlsx-export-smoke.mjs",
+    "verify:workbuddy": "node scripts/validate-workbuddy-skills.mjs",
+    "verify:public": "node scripts/validate-public-source.mjs"
+  },
+  "dependencies": {
+    "@firecrawl/anydoc": "0.1.9",
+    "@phosphor-icons/web": "2.1.2"
+  }
+}

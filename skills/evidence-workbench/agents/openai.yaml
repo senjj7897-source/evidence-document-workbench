@@ -1,0 +1,4 @@
+interface:
+  display_name: "证据工作台"
+  short_description: "统筹可追溯的文档对比、审查、优化与知识治理"
+  default_prompt: "Use $evidence-workbench to turn these materials into a traceable review and decision workflow."

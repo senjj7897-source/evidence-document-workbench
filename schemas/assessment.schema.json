@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assessment"],
+  "properties": {
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overallRating", "executiveSummary", "strengths", "items", "roadmap"],
+      "properties": {
+        "overallRating": {"type": "string", "enum": ["基础形成", "较为完整", "成熟", "需系统重构"]},
+        "executiveSummary": {"type": "string"},
+        "strengths": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {"type": "string"}
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "priority", "dimension", "title", "currentState", "confirmedGap", "professionalJudgment", "failureMode", "recommendation", "implementationSteps", "requiredEvidence", "conclusionBoundary", "closure", "expectedValue", "evidence"],
+            "properties": {
+              "type": {"type": "string", "enum": ["incomplete", "optimize", "deepen"]},
+              "priority": {"type": "string", "enum": ["high", "medium", "low"]},
+              "dimension": {"type": "string"},
+              "title": {"type": "string"},
+              "currentState": {"type": "string"},
+              "confirmedGap": {"type": "string"},
+              "professionalJudgment": {"type": "string"},
+              "failureMode": {"type": "string"},
+              "recommendation": {"type": "string"},
+              "implementationSteps": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {"type": "string"}
+              },
+              "requiredEvidence": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 8,
+                "items": {"type": "string"}
+              },
+              "conclusionBoundary": {"type": "string"},
+              "closure": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["status", "target", "inputs", "detection", "decision", "action", "exitAndFeedback", "missingLinks"],
+                "properties": {
+                  "status": {"type": "string", "enum": ["complete", "partial", "broken", "not_applicable"]},
+                  "target": {"type": "string"},
+                  "inputs": {"type": "string"},
+                  "detection": {"type": "string"},
+                  "decision": {"type": "string"},
+                  "action": {"type": "string"},
+                  "exitAndFeedback": {"type": "string"},
+                  "missingLinks": {"type": "array", "maxItems": 8, "items": {"type": "string"}}
+                }
+              },
+              "expectedValue": {"type": "string"},
+              "evidence": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["fileId", "fileName", "locationLabel", "quote"],
+                  "properties": {
+                    "fileId": {"type": "string"},
+                    "fileName": {"type": "string"},
+                    "locationLabel": {"type": "string"},
+                    "quote": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "roadmap": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["phase", "objective", "actions"],
+            "properties": {
+              "phase": {"type": "string"},
+              "objective": {"type": "string"},
+              "actions": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

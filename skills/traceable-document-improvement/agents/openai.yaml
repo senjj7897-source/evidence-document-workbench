@@ -1,0 +1,4 @@
+interface:
+  display_name: "可追溯文档优化"
+  short_description: "保持事实与责任边界的多维修改和正式成稿"
+  default_prompt: "Use $traceable-document-improvement to improve this document without changing verified facts or hiding uncertainty."

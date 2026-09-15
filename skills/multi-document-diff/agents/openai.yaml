@@ -1,0 +1,4 @@
+interface:
+  display_name: "多文件实质差异对比"
+  short_description: "识别影响事实、规则、数据与执行逻辑的实质变化"
+  default_prompt: "Use $multi-document-diff to compare these files and show every decision-relevant difference with source locations."

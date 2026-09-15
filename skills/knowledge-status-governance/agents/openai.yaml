@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识状态治理"
+  short_description: "分开管理制度时效、定稿、范围、来源和解析质量"
+  default_prompt: "Use $knowledge-status-governance to classify this knowledge base without inferring authority from filenames or dates."
